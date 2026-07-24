@@ -1,5 +1,5 @@
 /* ============================================================
-   ABYSS — Continuous Melodic Ocean Soundscape Engine
+   ABYSS — Soft & Gentle Ambient Music Soundscape Engine
    ============================================================ */
 
 class AbyssAudioEngine {
@@ -21,10 +21,10 @@ class AbyssAudioEngine {
         });
       }
 
-      // Continuous, smooth, unbroken melodic deep sea music stream (No water droplets!)
-      this.bgAudio = new Audio('https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3');
+      // Soft, gentle, peaceful ambient piano & ocean waves melody (Zero noise, 100% soothing)
+      this.bgAudio = new Audio('https://cdn.pixabay.com/download/audio/2022/05/16/audio_c0e0b3bf1d.mp3');
       this.bgAudio.loop = true;
-      this.bgAudio.volume = 1.0; // FULL HIGH VOLUME
+      this.bgAudio.volume = 0.45; // Soft, pleasant, comfortable volume
     });
   }
 
@@ -47,7 +47,6 @@ class AbyssAudioEngine {
         })
         .catch(err => {
           console.log('Audio playback error:', err);
-          // Retry playback on user interaction
           const retry = () => {
             this.bgAudio.play().then(() => {
               this.isPlaying = true;
@@ -75,7 +74,7 @@ class AbyssAudioEngine {
     const textSpan = this.toggleBtn.querySelector('.audio-text');
     if (playing) {
       this.toggleBtn.classList.add('playing');
-      if (textSpan) textSpan.textContent = '🎶 Playing Song 🔊';
+      if (textSpan) textSpan.textContent = '🎶 Soft Song On 🔊';
     } else {
       this.toggleBtn.classList.remove('playing');
       if (textSpan) textSpan.textContent = 'Audio Off';
