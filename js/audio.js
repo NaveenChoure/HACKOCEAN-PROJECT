@@ -1,6 +1,5 @@
-﻿/* ============================================================
-   ABYSS â€” Web Audio Ambient Soundscape Generator
-   Procedural Deep Ocean Hydro-Acoustic Synthesizer
+/* ============================================================
+   ABYSS — Web Audio & Ambient Hydro-Acoustic Engine
    ============================================================ */
 
 class AbyssAudioEngine {
@@ -8,18 +7,42 @@ class AbyssAudioEngine {
     this.ctx = null;
     this.isPlaying = false;
     this.masterGain = null;
-    this.pinkNoiseNode = null;
     this.subOsc = null;
+    this.pinkNoiseNode = null;
     this.bubbleTimer = null;
+    this.bgAudio = null;
 
-    this.toggleBtn = document.getElementById('audioToggle');
+    this.toggleBtn = null;
     this.init();
   }
 
   init() {
-    if (this.toggleBtn) {
-      this.toggleBtn.addEventListener('click', () => this.toggleSound());
-    }
+    document.addEventListener('DOMContentLoaded', () => {
+      this.toggleBtn = document.getElementById('audioToggle');
+      if (this.toggleBtn) {
+        this.toggleBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          this.toggleSound();
+        });
+      }
+
+      // Pre-create ambient audio element fallback
+      this.bgAudio = new Audio('https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3');
+      this.bgAudio.loop = true;
+      this.bgAudio.volume = 0.5;
+
+      // Unlock AudioContext on first user interaction anywhere
+      const unlockAudio = () => {
+        if (this.ctx && this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+        document.removeEventListener('click', unlockAudio);
+        document.removeEventListener('keydown', unlockAudio);
+      };
+      document.addEventListener('click', unlockAudio);
+      document.addEventListener('keydown', unlockAudio);
+    });
   }
 
   initAudioContext() {
@@ -28,7 +51,7 @@ class AbyssAudioEngine {
       this.ctx = new AudioCtx();
 
       this.masterGain = this.ctx.createGain();
-      this.masterGain.gain.setValueAtTime(0.15, this.ctx.currentTime);
+      this.masterGain.gain.setValueAtTime(0.5, this.ctx.currentTime);
       this.masterGain.connect(this.ctx.destination);
     }
   }
@@ -51,147 +74,145 @@ class AbyssAudioEngine {
     if (this.isPlaying) return;
     this.isPlaying = true;
 
-    if (this.toggleBtn) {
-      this.toggleBtn.classList.add('playing');
-      const textSpan = this.toggleBtn.querySelector('.audio-text');
-      if (textSpan) textSpan.textContent = 'Audio On';
+    this.updateUI(true);
+
+    // 1. Play Ambient Hydrophone Background Track
+    if (this.bgAudio) {
+      this.bgAudio.play().catch(err => console.log('HTML5 Audio fallback:', err));
     }
 
-    // Fade master gain up
-    this.masterGain.gain.cancelScheduledValues(this.ctx.currentTime);
-    this.masterGain.gain.setValueAtTime(0, this.ctx.currentTime);
-    this.masterGain.gain.linearRampToValueAtTime(0.2, this.ctx.currentTime + 2);
+    // 2. Synthesize Deep Ocean Sub-Bass Rumble
+    if (this.ctx) {
+      try {
+        this.subOsc = this.ctx.createOscillator();
+        const subGain = this.ctx.createGain();
+        const subFilter = this.ctx.createBiquadFilter();
 
-    // 1. Deep Sub Bass Drone (Low Ocean Rumble)
-    this.subOsc = this.ctx.createOscillator();
-    const subGain = this.ctx.createGain();
-    const subFilter = this.ctx.createBiquadFilter();
+        this.subOsc.type = 'sine';
+        this.subOsc.frequency.setValueAtTime(60, this.ctx.currentTime);
 
-    this.subOsc.type = 'sine';
-    this.subOsc.frequency.setValueAtTime(55, this.ctx.currentTime); // Low A
+        subFilter.type = 'lowpass';
+        subFilter.frequency.value = 150;
+        subGain.gain.value = 0.4;
 
-    // Sub LFO for gentle swell
-    const lfo = this.ctx.createOscillator();
-    const lfoGain = this.ctx.createGain();
-    lfo.frequency.value = 0.1; // 10s cycle
-    lfoGain.gain.value = 8;
-    lfo.connect(this.subOsc.frequency);
-    lfo.start();
-
-    subFilter.type = 'lowpass';
-    subFilter.frequency.value = 120;
-
-    subGain.gain.value = 0.5;
-
-    this.subOsc.connect(subFilter);
-    subFilter.connect(subGain);
-    subGain.connect(this.masterGain);
-    this.subOsc.start();
-
-    // 2. Ambient Ocean Waves / Hydro Filtered Noise
-    const bufferSize = this.ctx.sampleRate * 2;
-    const noiseBuffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
-    const output = noiseBuffer.getChannelData(0);
-    let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
-
-    for (let i = 0; i < bufferSize; i++) {
-      const white = Math.random() * 2 - 1;
-      b0 = 0.99886 * b0 + white * 0.0555179;
-      b1 = 0.99332 * b1 + white * 0.0750759;
-      b2 = 0.96900 * b2 + white * 0.1538520;
-      b3 = 0.86650 * b3 + white * 0.3104856;
-      b4 = 0.55000 * b4 + white * 0.5329522;
-      b5 = -0.7616 * b5 - white * 0.0168980;
-      output[i] = b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362;
-      output[i] *= 0.11;
-      b6 = white * 0.115926;
+        this.subOsc.connect(subFilter);
+        subFilter.connect(subGain);
+        subGain.connect(this.masterGain);
+        this.subOsc.start();
+      } catch(e) {}
     }
 
-    this.pinkNoiseNode = this.ctx.createBufferSource();
-    this.pinkNoiseNode.buffer = noiseBuffer;
-    this.pinkNoiseNode.loop = true;
-
-    const noiseFilter = this.ctx.createBiquadFilter();
-    noiseFilter.type = 'bandpass';
-    noiseFilter.frequency.value = 350;
-    noiseFilter.Q.value = 1.2;
-
-    // Filter modulation for gentle current swell
-    const noiseLfo = this.ctx.createOscillator();
-    const noiseLfoGain = this.ctx.createGain();
-    noiseLfo.frequency.value = 0.15;
-    noiseLfoGain.gain.value = 150;
-    noiseLfo.connect(noiseFilter.frequency);
-    noiseLfo.start();
-
-    const noiseGain = this.ctx.createGain();
-    noiseGain.gain.value = 0.4;
-
-    this.pinkNoiseNode.connect(noiseFilter);
-    noiseFilter.connect(noiseGain);
-    noiseGain.connect(this.masterGain);
-    this.pinkNoiseNode.start();
-
-    // 3. Random Hydroacoustic Bubble Pops
+    // 3. Play Sonar Ping & Bubble Pops
+    this.playSonarPing();
     this.scheduleBubbles();
   }
 
-  triggerBubbleSound() {
-    if (!this.isPlaying || !this.ctx) return;
+  stop() {
+    this.isPlaying = false;
+    this.updateUI(false);
 
-    const osc = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
+    if (this.bgAudio) {
+      this.bgAudio.pause();
+    }
 
-    const startFreq = 300 + Math.random() * 400;
-    const endFreq = startFreq + 200 + Math.random() * 300;
+    if (this.bubbleTimer) {
+      clearTimeout(this.bubbleTimer);
+    }
 
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(startFreq, this.ctx.currentTime);
-    osc.frequency.exponentialRampToValueAtTime(endFreq, this.ctx.currentTime + 0.08);
+    if (this.subOsc) {
+      try {
+        this.subOsc.stop();
+        this.subOsc.disconnect();
+      } catch(e) {}
+      this.subOsc = null;
+    }
+  }
 
-    gain.gain.setValueAtTime(0.08, this.ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.08);
+  updateUI(playing) {
+    this.toggleBtn = document.getElementById('audioToggle');
+    if (!this.toggleBtn) return;
 
-    osc.connect(gain);
-    gain.connect(this.masterGain);
+    const textSpan = this.toggleBtn.querySelector('.audio-text');
+    if (playing) {
+      this.toggleBtn.classList.add('playing');
+      if (textSpan) textSpan.textContent = 'Audio On 🔊';
+    } else {
+      this.toggleBtn.classList.remove('playing');
+      if (textSpan) textSpan.textContent = 'Audio Off';
+    }
+  }
 
-    osc.start();
-    osc.stop(this.ctx.currentTime + 0.09);
+  playSonarPing() {
+    if (!this.ctx) this.initAudioContext();
+    if (this.ctx.state === 'suspended') this.ctx.resume();
+
+    try {
+      const pingOsc = this.ctx.createOscillator();
+      const pingGain = this.ctx.createGain();
+      const pingFilter = this.ctx.createBiquadFilter();
+
+      pingOsc.type = 'sine';
+      pingOsc.frequency.setValueAtTime(1400, this.ctx.currentTime);
+      pingOsc.frequency.exponentialRampToValueAtTime(600, this.ctx.currentTime + 0.6);
+
+      pingFilter.type = 'bandpass';
+      pingFilter.frequency.value = 1000;
+      pingFilter.Q.value = 5;
+
+      pingGain.gain.setValueAtTime(0.3, this.ctx.currentTime);
+      pingGain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.8);
+
+      pingOsc.connect(pingFilter);
+      pingFilter.connect(pingGain);
+      pingGain.connect(this.masterGain || this.ctx.destination);
+
+      pingOsc.start();
+      pingOsc.stop(this.ctx.currentTime + 0.85);
+    } catch(e) {}
   }
 
   scheduleBubbles() {
     if (!this.isPlaying) return;
 
     this.triggerBubbleSound();
-    const nextInterval = Math.random() * 1500 + 500;
+    const nextInterval = Math.random() * 2000 + 800;
     this.bubbleTimer = setTimeout(() => this.scheduleBubbles(), nextInterval);
   }
 
-  stop() {
-    this.isPlaying = false;
+  triggerBubbleSound() {
+    if (!this.isPlaying || !this.ctx) return;
 
-    if (this.toggleBtn) {
-      this.toggleBtn.classList.remove('playing');
-      const textSpan = this.toggleBtn.querySelector('.audio-text');
-      if (textSpan) textSpan.textContent = 'Audio Off';
-    }
+    try {
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
 
-    if (this.bubbleTimer) clearTimeout(this.bubbleTimer);
+      const startFreq = 400 + Math.random() * 300;
+      const endFreq = startFreq + 250;
 
-    if (this.masterGain && this.ctx) {
-      this.masterGain.gain.linearRampToValueAtTime(0.001, this.ctx.currentTime + 1);
-      setTimeout(() => {
-        if (this.subOsc) {
-          try { this.subOsc.stop(); } catch(e){}
-        }
-        if (this.pinkNoiseNode) {
-          try { this.pinkNoiseNode.stop(); } catch(e){}
-        }
-      }, 1000);
-    }
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(startFreq, this.ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(endFreq, this.ctx.currentTime + 0.1);
+
+      gain.gain.setValueAtTime(0.1, this.ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.1);
+
+      osc.connect(gain);
+      gain.connect(this.masterGain);
+
+      osc.start();
+      osc.stop(this.ctx.currentTime + 0.11);
+    } catch(e) {}
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  window.abyssAudio = new AbyssAudioEngine();
+// Global Audio Engine Instance
+window.abyssAudio = new AbyssAudioEngine();
+
+// Play Sonar Ping on interactive clicks
+document.addEventListener('click', (e) => {
+  if (e.target.closest('.btn, .nav-links a, .explore-btn, [data-magnetic]')) {
+    if (window.abyssAudio) {
+      window.abyssAudio.playSonarPing();
+    }
+  }
 });
