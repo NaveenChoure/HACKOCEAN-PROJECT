@@ -27,10 +27,10 @@ class AbyssAudioEngine {
         });
       }
 
-      // Pre-create ambient soothing audio element fallback
-      this.bgAudio = new Audio('https://cdn.pixabay.com/download/audio/2022/05/16/audio_c0e0b3bf1d.mp3');
+      // Pre-create high-energy Haryanvi Banger audio element at FULL 100% volume
+      this.bgAudio = new Audio('https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c50e82c9.mp3');
       this.bgAudio.loop = true;
-      this.bgAudio.volume = 0.55;
+      this.bgAudio.volume = 1.0; // FULL HIGH VOLUME
 
       // Unlock AudioContext on first user interaction anywhere
       const unlockAudio = () => {
@@ -51,7 +51,7 @@ class AbyssAudioEngine {
       this.ctx = new AudioCtx();
 
       this.masterGain = this.ctx.createGain();
-      this.masterGain.gain.setValueAtTime(0.5, this.ctx.currentTime);
+      this.masterGain.gain.setValueAtTime(1.0, this.ctx.currentTime); // MAX VOLUME
       this.masterGain.connect(this.ctx.destination);
     }
   }
@@ -135,7 +135,7 @@ class AbyssAudioEngine {
     const textSpan = this.toggleBtn.querySelector('.audio-text');
     if (playing) {
       this.toggleBtn.classList.add('playing');
-      if (textSpan) textSpan.textContent = 'Audio On 🔊';
+      if (textSpan) textSpan.textContent = '🔥 Bairan Banger (100% Vol)';
     } else {
       this.toggleBtn.classList.remove('playing');
       if (textSpan) textSpan.textContent = 'Audio Off';
