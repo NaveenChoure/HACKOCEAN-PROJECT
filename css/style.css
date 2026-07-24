@@ -525,6 +525,44 @@ img {
   box-shadow: 0 0 10px var(--glow-cyan), 0 0 20px var(--glow-cyan);
 }
 
+/* ---------- Audio Music Button ---------- */
+.nav-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(0, 245, 212, 0.08);
+  border: 1px solid rgba(0, 245, 212, 0.3);
+  border-radius: var(--radius-full);
+  color: var(--glow-cyan);
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  backdrop-filter: blur(10px);
+}
+
+.nav-audio-btn:hover {
+  background: rgba(0, 245, 212, 0.2);
+  border-color: var(--glow-cyan);
+  box-shadow: 0 0 15px rgba(0, 245, 212, 0.3);
+  transform: translateY(-1px);
+}
+
+.nav-audio-btn.playing {
+  background: linear-gradient(135deg, rgba(0, 245, 212, 0.25), rgba(124, 58, 237, 0.25));
+  border-color: var(--glow-cyan);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 245, 212, 0.4);
+  animation: pulse-audio 2s infinite alternate;
+}
+
+@keyframes pulse-audio {
+  0% { box-shadow: 0 0 10px rgba(0, 245, 212, 0.3); }
+  100% { box-shadow: 0 0 25px rgba(0, 245, 212, 0.6); }
+}
+
 /* ---------- Preloader ---------- */
 .preloader {
   position: fixed;
