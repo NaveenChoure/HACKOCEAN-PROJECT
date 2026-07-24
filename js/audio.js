@@ -27,10 +27,10 @@ class AbyssAudioEngine {
         });
       }
 
-      // Pre-create high-energy Haryanvi Banger audio element at FULL 100% volume
-      this.bgAudio = new Audio('https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c50e82c9.mp3');
+      // High-quality studio mastered epic ocean audio track at 100% volume
+      this.bgAudio = new Audio('https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3');
       this.bgAudio.loop = true;
-      this.bgAudio.volume = 1.0; // FULL HIGH VOLUME
+      this.bgAudio.volume = 1.0;
 
       // Unlock AudioContext on first user interaction anywhere
       const unlockAudio = () => {
@@ -135,7 +135,7 @@ class AbyssAudioEngine {
     const textSpan = this.toggleBtn.querySelector('.audio-text');
     if (playing) {
       this.toggleBtn.classList.add('playing');
-      if (textSpan) textSpan.textContent = '🔥 Bairan Banger (100% Vol)';
+      if (textSpan) textSpan.textContent = '🎵 Audio On 🔊';
     } else {
       this.toggleBtn.classList.remove('playing');
       if (textSpan) textSpan.textContent = 'Audio Off';
