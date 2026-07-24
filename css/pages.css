@@ -1,0 +1,472 @@
+/* ============================================================
+   PAGES.CSS — Page-Specific Styles
+   Booking form, pricing tables, contact cards, conservation
+   ============================================================ */
+
+/* ============================================================
+   BOOKING / CONTACT FORM
+   ============================================================ */
+.booking-form-section {
+  padding: var(--section-padding);
+  position: relative;
+}
+
+.booking-form-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--gap-2xl);
+  align-items: start;
+}
+
+.booking-form {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--card-padding);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-md);
+}
+
+.form-group {
+  margin-bottom: var(--gap-md);
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--white-70);
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  color: var(--white);
+  font-size: var(--fs-body);
+  outline: none;
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--glow-cyan);
+  box-shadow: 0 0 0 3px rgba(0, 245, 212, 0.08);
+  background: rgba(0, 245, 212, 0.02);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--white-30);
+}
+
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23adc8eb' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.form-group select option {
+  background: var(--abyss-deep);
+  color: var(--white);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-submit-btn {
+  width: 100%;
+  margin-top: var(--gap-sm);
+}
+
+/* Contact Info Cards */
+.contact-info-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-md);
+}
+
+.contact-info-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.contact-info-card:hover {
+  border-color: var(--glass-border-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.contact-info-card .icon-circle {
+  flex-shrink: 0;
+}
+
+.contact-info-card h4 {
+  font-family: var(--font-ui);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.contact-info-card p {
+  font-size: var(--fs-small);
+  color: var(--white-50);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   PRICING TABLE
+   ============================================================ */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-lg);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  text-align: center;
+  position: relative;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.pricing-card.featured {
+  border-color: var(--glow-cyan);
+  background: linear-gradient(180deg, rgba(0, 245, 212, 0.04), var(--glass-bg));
+  transform: scale(1.05);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.pricing-card.featured:hover {
+  transform: scale(1.05) translateY(-4px);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--glow-cyan), var(--glow-blue));
+  color: var(--abyss-void);
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 20px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.pricing-tier {
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--glow-cyan);
+  margin-bottom: 12px;
+}
+
+.pricing-card h3 {
+  font-size: var(--fs-h3);
+  margin-bottom: 8px;
+}
+
+.pricing-amount {
+  font-family: var(--font-ui);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: var(--white);
+  margin: 20px 0;
+}
+
+.pricing-amount .currency {
+  font-size: 0.5em;
+  vertical-align: super;
+  color: var(--white-50);
+}
+
+.pricing-amount .per {
+  font-size: 0.35em;
+  color: var(--white-30);
+  font-weight: 400;
+}
+
+.pricing-features {
+  text-align: left;
+  margin: 24px 0;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: var(--fs-small);
+  color: var(--white-70);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.pricing-features li:last-child {
+  border-bottom: none;
+}
+
+.pricing-features li svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  stroke: var(--glow-cyan);
+  stroke-width: 2;
+  fill: none;
+  margin-top: 2px;
+}
+
+.pricing-card .btn {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* ============================================================
+   CONSERVATION SECTION
+   ============================================================ */
+.conservation-section {
+  padding: var(--section-padding);
+  background: linear-gradient(180deg, transparent, rgba(0, 255, 135, 0.02), transparent);
+  position: relative;
+}
+
+.conservation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-2xl);
+  align-items: center;
+}
+
+.conservation-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-md);
+  margin-top: var(--gap-xl);
+}
+
+.conservation-stat {
+  padding: 24px;
+  background: rgba(0, 255, 135, 0.03);
+  border: 1px solid rgba(0, 255, 135, 0.1);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.conservation-stat .stat-number {
+  font-family: var(--font-ui);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: var(--glow-green);
+}
+
+.conservation-stat .stat-label {
+  font-size: var(--fs-xs);
+  color: var(--white-50);
+  margin-top: 4px;
+}
+
+.conservation-image {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.conservation-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+/* ============================================================
+   EXPEDITION DETAIL EXPANDED
+   ============================================================ */
+.expedition-filter-bar {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: var(--gap-xl);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 10px 24px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--white-50);
+  transition: all var(--duration-fast) var(--ease-smooth);
+  cursor: pointer;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: var(--glow-cyan);
+  color: var(--glow-cyan);
+  background: rgba(0, 245, 212, 0.06);
+}
+
+/* ============================================================
+   TECHNOLOGY SECTION
+   ============================================================ */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap-lg);
+}
+
+.tech-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  text-align: center;
+  transition: all var(--duration-normal) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--glow-cyan), var(--vivid-purple));
+  opacity: 0;
+  transition: opacity var(--duration-normal);
+}
+
+.tech-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-4px);
+}
+
+.tech-card:hover::before {
+  opacity: 1;
+}
+
+.tech-card .icon-circle {
+  margin: 0 auto 20px;
+}
+
+.tech-card h4 {
+  font-family: var(--font-ui);
+  font-size: var(--fs-h4);
+  margin-bottom: 10px;
+}
+
+.tech-card p {
+  font-size: var(--fs-small);
+  color: var(--white-50);
+  margin: 0 auto;
+}
+
+/* ============================================================
+   RESPONSIVE — PAGES
+   ============================================================ */
+@media (max-width: 1024px) {
+  .booking-form-grid {
+    grid-template-columns: 1fr;
+    gap: var(--gap-xl);
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+
+  .pricing-card.featured {
+    transform: none;
+  }
+
+  .pricing-card.featured:hover {
+    transform: translateY(-4px);
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .conservation-grid {
+    grid-template-columns: 1fr;
+    gap: var(--gap-xl);
+  }
+
+  .conservation-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .expedition-filter-bar {
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .conservation-stats {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,10 @@
+# Scratch & Temporary Files
+original_*
+upgraded_*
+scratch_*
+*.tmp
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ABYSS — Luxury deep-sea submarine expeditions to the ocean's most extraordinary depths. Explore the Mariana Trench, Titanic wreck, and more.">
+  <meta name="keywords" content="deep sea, submarine, expedition, ocean, luxury travel, Mariana Trench, underwater">
+  <meta name="theme-color" content="#001233">
+  <title>ABYSS — Descend Into The Unknown</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/cursor.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+
+  <!-- ===================== PRELOADER ===================== -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-logo">ABYSS</div>
+    <div class="preloader-bar"></div>
+  </div>
+
+  <!-- ===================== CUSTOM CURSOR ===================== -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-text" id="cursorText"></div>
+
+  <!-- ===================== SCROLL PROGRESS ===================== -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo" data-magnetic>
+        <div class="nav-logo-icon">🌊</div>
+        <span class="nav-logo-text">ABYSS</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#dive">Experience</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#expeditions">Expeditions</a></li>
+        <li><a href="#fleet">Fleet</a></li>
+        <li><a href="#species">Species</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#book" class="nav-cta" data-magnetic>Book Now</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================== 1. HERO SECTION ===================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="assets/images/hero-ocean.png" alt="Deep ocean abyss" loading="eager">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-vignette"></div>
+
+    <!-- Floating bubbles -->
+    <div class="hero-bubbles" id="heroBubbles">
+      <div class="bubble" style="left:10%;width:6px;height:6px;animation-duration:8s;animation-delay:0s;"></div>
+      <div class="bubble" style="left:25%;width:10px;height:10px;animation-duration:12s;animation-delay:2s;"></div>
+      <div class="bubble" style="left:40%;width:4px;height:4px;animation-duration:9s;animation-delay:4s;"></div>
+      <div class="bubble" style="left:55%;width:8px;height:8px;animation-duration:11s;animation-delay:1s;"></div>
+      <div class="bubble" style="left:70%;width:5px;height:5px;animation-duration:10s;animation-delay:3s;"></div>
+      <div class="bubble" style="left:85%;width:12px;height:12px;animation-duration:14s;animation-delay:5s;"></div>
+      <div class="bubble" style="left:15%;width:7px;height:7px;animation-duration:13s;animation-delay:6s;"></div>
+      <div class="bubble" style="left:60%;width:3px;height:3px;animation-duration:7s;animation-delay:2.5s;"></div>
+      <div class="bubble" style="left:90%;width:9px;height:9px;animation-duration:15s;animation-delay:7s;"></div>
+      <div class="bubble" style="left:35%;width:5px;height:5px;animation-duration:10s;animation-delay:4.5s;"></div>
+    </div>
+
+    <div class="particles-container">
+      <div class="light-rays"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="dot"></span>
+        Luxury Deep-Sea Expeditions
+      </div>
+      <h1 class="hero-title">
+        <span class="line">
+          <span class="word">Descend</span>
+          <span class="word">Into</span>
+        </span>
+        <span class="line">
+          <span class="word gradient-text">The Unknown</span>
+        </span>
+      </h1>
+      <p class="hero-subtitle reveal" style="animation-delay: 0.3s">
+        Embark on the most exclusive underwater journeys ever conceived.
+        Witness the ocean's deepest mysteries in unparalleled luxury.
+      </p>
+      <div class="hero-buttons reveal" style="animation-delay: 0.5s">
+        <a href="#book" class="btn btn-primary btn-lg" data-magnetic>
+          Book Expedition
+        </a>
+        <a href="#dive" class="btn btn-secondary btn-lg" data-magnetic>
+          <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          Watch Journey
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-indicator-mouse"></div>
+      <span class="scroll-indicator-text">Scroll to dive</span>
+    </div>
+  </section>
+
+  <!-- ===================== 2. DIVE EXPERIENCE ===================== -->
+  <section class="dive-experience" id="dive">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">The Descent</div>
+        <h2 class="section-title reveal">Dive Into The <span class="text-gradient">Deep</span></h2>
+        <p class="section-subtitle reveal" style="margin: 0 auto">
+          Experience what awaits at every depth of the ocean �?" from sunlit waters to the crushing darkness of the abyss.
+        </p>
+      </div>
+
+      <div class="depth-timeline">
+        <!-- Surface -->
+        <div class="depth-stop reveal">
+          <div class="depth-content">
+            <div class="depth-label" style="color: var(--abyss-shallow)">Surface Zone</div>
+            <h3>0m �?" The Sunlit Waters</h3>
+            <p>Where your journey begins. Crystal-clear waters teeming with colorful reef fish, playful dolphins, and dancing light. Board our luxury submarine from our floating platform.</p>
+          </div>
+          <div class="depth-marker surface">0m</div>
+          <div class="depth-visual">
+            <div class="depth-icon" style="background: linear-gradient(135deg, rgba(72,202,228,0.1), rgba(0,180,216,0.1))">�~?️</div>
+          </div>
+        </div>
+
+        <!-- 100m -->
+        <div class="depth-stop reveal">
+          <div class="depth-visual">
+            <div class="depth-icon" style="background: linear-gradient(135deg, rgba(0,150,199,0.1), rgba(0,119,182,0.1))">�Y��</div>
+          </div>
+          <div class="depth-marker mid">100m</div>
+          <div class="depth-content">
+            <div class="depth-label" style="color: var(--abyss-light)">Twilight Zone</div>
+            <h3>100m �?" The Fading Light</h3>
+            <p>Sunlight dims as you descend past schools of barracuda and sleek sharks. Watch the blue world above slowly fade as bioluminescent creatures begin to appear.</p>
+          </div>
+        </div>
+
+        <!-- 500m -->
+        <div class="depth-stop reveal">
+          <div class="depth-content">
+            <div class="depth-label" style="color: var(--abyss-blue)">Midnight Zone</div>
+            <h3>500m �?" The Eternal Darkness</h3>
+            <p>Complete darkness envelops you. Giant squid shadows pass by your observation dome. Bioluminescent jellyfish create living constellations in the void.</p>
+          </div>
+          <div class="depth-marker deep">500m</div>
+          <div class="depth-visual">
+            <div class="depth-icon" style="background: linear-gradient(135deg, rgba(0,119,182,0.1), rgba(2,62,138,0.1))">�Y�'</div>
+          </div>
+        </div>
+
+        <!-- 1000m -->
+        <div class="depth-stop reveal">
+          <div class="depth-visual">
+            <div class="depth-icon" style="background: linear-gradient(135deg, rgba(116,0,184,0.1), rgba(10,10,46,0.1))">�Y"�</div>
+          </div>
+          <div class="depth-marker abyss">1000m</div>
+          <div class="depth-content">
+            <div class="depth-label" style="color: var(--glow-purple)">Abyssal Zone</div>
+            <h3>1000m �?" The Abyss</h3>
+            <p>Crushing pressure, near-freezing temperatures. Alien creatures with transparent bodies and glowing organs drift past. You've entered a world few humans have ever seen.</p>
+          </div>
+        </div>
+
+        <!-- 4000m -->
+        <div class="depth-stop reveal">
+          <div class="depth-content">
+            <div class="depth-label" style="color: var(--glow-magenta)">Hadal Zone</div>
+            <h3>4000m �?" The Final Frontier</h3>
+            <p>The deepest point reachable. Hydrothermal vents spew mineral-rich clouds. Bizarre tube worms and ghost-white crabs thrive in total isolation. Welcome to the edge of life.</p>
+          </div>
+          <div class="depth-marker hadal">4000m</div>
+          <div class="depth-visual">
+            <div class="depth-icon" style="background: linear-gradient(135deg, rgba(247,37,133,0.1), rgba(5,5,16,0.2))">�YO<</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="depth-fog"></div>
+  </section>
+
+  <!-- ===================== 3. ABOUT ABYSS ===================== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="section-label reveal">About ABYSS</div>
+          <h2 class="section-title reveal">Pioneering <span class="text-gradient">Luxury</span> Deep-Sea Exploration</h2>
+          <p class="reveal">
+            ABYSS is the world's first luxury deep-sea expedition company, combining
+            cutting-edge submarine technology with five-star hospitality to take you
+            where no tourist has gone before.
+          </p>
+
+          <div class="about-values">
+            <div class="about-value-item reveal">
+              <div class="about-value-icon">�YZ�</div>
+              <div>
+                <h4>Our Mission</h4>
+                <p>To make the deep ocean accessible to those who dream of exploring the last frontier on Earth.</p>
+              </div>
+            </div>
+            <div class="about-value-item reveal">
+              <div class="about-value-icon">�Y"�</div>
+              <div>
+                <h4>Our Vision</h4>
+                <p>A world where every person can witness the majesty of the deep sea and become an advocate for ocean conservation.</p>
+              </div>
+            </div>
+            <div class="about-value-item reveal">
+              <div class="about-value-icon">�Y'Z</div>
+              <div>
+                <h4>Luxury Experience</h4>
+                <p>Every expedition features gourmet dining, premium cabins, panoramic observation domes, and personal marine biologists.</p>
+              </div>
+            </div>
+            <div class="about-value-item reveal">
+              <div class="about-value-icon">�YO�</div>
+              <div>
+                <h4>Conservation Promise</h4>
+                <p>10% of every booking directly funds ocean conservation, marine research, and coral reef restoration programs worldwide.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-image reveal-rotate">
+          <img src="assets/images/submarine.png" alt="ABYSS luxury submarine">
+          <div class="about-float-stat stat-1">
+            <div class="stat-number">250+</div>
+            <div class="stat-text">Expeditions Completed</div>
+          </div>
+          <div class="about-float-stat stat-2">
+            <div class="stat-number">100%</div>
+            <div class="stat-text">Safety Record</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4. FEATURED EXPEDITIONS ===================== -->
+  <section class="expeditions-section" id="expeditions">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">Featured Expeditions</div>
+        <h2 class="section-title reveal">Choose Your <span class="text-gradient">Descent</span></h2>
+        <p class="section-subtitle reveal" style="margin: 0 auto">
+          Six extraordinary underwater destinations, each offering a unique encounter with the ocean's most hidden wonders.
+        </p>
+      </div>
+
+      <div class="expeditions-grid stagger-children">
+        <!-- Mariana Trench -->
+        <div class="expedition-card reveal tilt-card">
+          <div class="expedition-card-image">
+            <img src="assets/images/expedition-mariana.png" alt="Mariana Trench expedition">
+            <span class="expedition-depth-badge">10,994m</span>
+            <span class="expedition-difficulty difficulty-extreme">Extreme</span>
+          </div>
+          <div class="expedition-card-body">
+            <h3>Mariana Trench</h3>
+            <div class="expedition-meta">
+              <div class="expedition-meta-item">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                14 Days
+              </div>
+              <div class="expedition-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Pacific Ocean
+              </div>
+            </div>
+            <div class="expedition-card-footer">
+              <div class="expedition-price">
+                <span class="currency">$</span><span class="amount">125,000</span><span class="per"> /person</span>
+              </div>
+              <a href="#book" class="btn btn-sm btn-primary" data-magnetic>Explore</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Titanic Wreck -->
+        <div class="expedition-card reveal tilt-card">
+          <div class="expedition-card-image">
+            <img src="assets/images/expedition-titanic.png" alt="Titanic wreck expedition">
+            <span class="expedition-depth-badge">3,800m</span>
+            <span class="expedition-difficulty difficulty-hard">Advanced</span>
+          </div>
+          <div class="expedition-card-body">
+            <h3>Titanic Wreck</h3>
+            <div class="expedition-meta">
+              <div class="expedition-meta-item">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                10 Days
+              </div>
+              <div class="expedition-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Atlantic Ocean
+              </div>
+            </div>
+            <div class="expedition-card-footer">
+              <div class="expedition-price">
+                <span class="currency">$</span><span class="amount">85,000</span><span class="per"> /person</span>
+              </div>
+              <a href="#book" class="btn btn-sm btn-primary" data-magnetic>Explore</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blue Hole -->
+        <div class="expedition-card reveal tilt-card">
+          <div class="expedition-card-image">
+            <img src="assets/images/expedition-bluehole.png" alt="Blue Hole expedition">
+            <span class="expedition-depth-badge">124m</span>
+            <span class="expedition-difficulty difficulty-easy">Beginner</span>
+          </div>
+          <div class="expedition-card-body">
+            <h3>Great Blue Hole</h3>
+            <div class="expedition-meta">
+              <div class="expedition-meta-item">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                5 Days
+              </div>
+              <div class="expedition-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Belize
+              </div>
+            </div>
+            <div class="expedition-card-footer">
+              <div class="expedition-price">
+                <span class="currency">$</span><span class="amount">35,000</span><span class="per"> /person</span>
+              </div>
+              <a href="#book" class="btn btn-sm btn-primary" data-magnetic>Explore</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Underwater Volcano -->
+        <div class="expedition-card reveal tilt-card">
+          <div class="expedition-card-image">
+            <img src="assets/images/expedition-volcano.png" alt="Underwater volcano expedition">
+            <span class="expedition-depth-badge">2,500m</span>
+            <span class="expedition-difficulty difficulty-hard">Advanced</span>
+          </div>
+          <div class="expedition-card-body">
+            <h3>Underwater Volcano</h3>
+            <div class="expedition-meta">
+              <div class="expedition-meta-item">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                8 Days
+              </div>
+              <div class="expedition-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Ring of Fire
+              </div>
+            </div>
+            <div class="expedition-card-footer">
+              <div class="expedition-price">
+                <span class="currency">$</span><span class="amount">72,000</span><span class="per"> /person</span>
+              </div>
+              <a href="#book" class="btn btn-sm btn-primary" data-magnetic>Explore</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coral Kingdom -->
+        <div class="expedition-card reveal tilt-card">
+          <div class="expedition-card-image">
+            <img src="assets/images/expedition-coral.png" alt="Coral Kingdom expedition">
+            <span class="expedition-depth-badge">60m</span>
+            <span class="expedition-difficulty difficulty-easy">Beginner</span>
+          </div>
+          <div class="expedition-card-body">
+            <h3>Coral Kingdom</h3>
+            <div class="expedition-meta">
+              <div class="expedition-meta-item">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                4 Days
+              </div>
+              <div class="expedition-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Great Barrier Reef
+              </div>
+            </div>
+            <div class="expedition-card-footer">
+              <div class="expedition-price">
+                <span class="currency">$</span><span class="amount">28,000</span><span class="per"> /person</span>
+              </div>
+              <a href="#book" class="btn btn-sm btn-primary" data-magnetic>Explore</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arctic Ocean -->
+        <div class="expedition-card reveal tilt-card">
+          <div class="expedition-card-image">
+            <img src="assets/images/expedition-arctic.png" alt="Arctic Ocean expedition">
+            <span class="expedition-depth-badge">1,200m</span>
+            <span class="expedition-difficulty difficulty-moderate">Moderate</span>
+          </div>
+          <div class="expedition-card-body">
+            <h3>Arctic Ocean</h3>
+            <div class="expedition-meta">
+              <div class="expedition-meta-item">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                12 Days
+              </div>
+              <div class="expedition-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Arctic Circle
+              </div>
+            </div>
+            <div class="expedition-card-footer">
+              <div class="expedition-price">
+                <span class="currency">$</span><span class="amount">95,000</span><span class="per"> /person</span>
+              </div>
+              <a href="#book" class="btn btn-sm btn-primary" data-magnetic>Explore</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. MEET OUR FLEET ===================== -->
+  <section class="fleet-section" id="fleet">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">Our Fleet</div>
+        <h2 class="section-title reveal">Meet The <span class="text-gradient">Vessels</span></h2>
+        <p class="section-subtitle reveal" style="margin: 0 auto">
+          State-of-the-art submarines engineered for the deepest dives and the most luxurious experience beneath the waves.
+        </p>
+      </div>
+
+      <div class="fleet-grid stagger-children">
+        <!-- Ocean Explorer -->
+        <div class="fleet-card reveal">
+          <div class="fleet-card-image">
+            <img src="assets/images/submarine.png" alt="Ocean Explorer submarine">
+          </div>
+          <div class="fleet-card-body">
+            <h3>Ocean Explorer</h3>
+            <div class="fleet-class">Flagship Class</div>
+            <div class="fleet-specs">
+              <div class="fleet-spec">
+                <div class="fleet-spec-icon">�Y'�</div>
+                <span>12-seat luxury cabin with reclining leather seats</span>
+              </div>
+              <div class="fleet-spec">
+                <div class="fleet-spec-icon">�Y"�</div>
+                <span>360° observation dome �?" 4-inch thick acrylic glass</span>
+              </div>
+              <div class="fleet-spec">
+                <div class="fleet-spec-icon">�Y�-</div>
+                <span>AI-assisted navigation with terrain mapping</span>
+              </div>
+              <div class="fleet-spec">
+                <div class="fleet-spec-icon">�Y>�️</div>
+                <span>Triple-redundant emergency systems</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deep Voyager -->
+        <div class="fleet-card reveal">
+          <div class="fleet-card-image">
+            <img src="assets/images/submarine.png" alt="Deep Voyager submarine">
+          </div>
+          <div class="fleet-card-body">
+            <h3>Deep Voyager</h3>
+            <div class="fleet-class">Expedition Class</div>
+            <div class="fleet-specs">
+              <div class="fleet-spec">
+                <div class="fleet-spec-icon">�Y'�</div>
+                <span>8-seat intimate exploration pod</span>
+              </div>
+              <div class="fleet-spec">
+                <div class="fleet-spec-icon">�Y"�</div>
+                <span>4K external cameras with live streaming</span>
+              </div>
+              <div class="fleet-spec">
+                <div class="fleet-spec-icon">�YZ�</div>
+                <span>Precision maneuvering for wreck exploration</span>
+              </div>
+              <div class="fleet-spec">
+                <div class="fleet-spec-icon">�Y"<</div>
+                <span>72-hour battery life with fast-charge dock</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Abyssal Phantom -->
+        <div class="fleet-card reveal">
+          <div class="fleet-card-image">
+            <img src="assets/images/submarine.png" alt="Abyssal Phantom submarine">
+          </div>
+          <div class="fleet-card-body">
+            <h3>Abyssal Phantom</h3>
+            <div class="fleet-class">Ultra-Deep Class</div>
+            <div class="fleet-specs">
+              <div class="fleet-spec">
+                <div class="fleet-spec-icon">�Y'�</div>
+                <span>4-seat extreme depth capsule</span>
+              </div>
+              <div class="fleet-spec">
+                <div class="fleet-spec-icon">�Y��</div>
+                <span>Onboard research lab with specimen collection</span>
+              </div>
+              <div class="fleet-spec">
+                <div class="fleet-spec-icon">�s�</div>
+                <span>Titanium pressure hull �?" rated to 11,000m</span>
+              </div>
+              <div class="fleet-spec">
+                <div class="fleet-spec-icon">�YO�️</div>
+                <span>Thermal regulation for extreme environments</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. MARINE SPECIES ===================== -->
+  <section class="species-section" id="species">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">Marine Life</div>
+        <h2 class="section-title reveal">Creatures Of The <span class="text-gradient">Deep</span></h2>
+        <p class="section-subtitle reveal" style="margin: 0 auto">
+          Encounter extraordinary marine species �?" from the majestic blue whale to the otherworldly anglerfish.
+        </p>
+      </div>
+
+      <div class="species-grid stagger-children">
+        <div class="species-card reveal">
+          <div class="species-card-bg" style="background: linear-gradient(135deg, #023e8a, #001233); font-size: 6rem">�Y�<</div>
+          <div class="species-card-info">
+            <h3>Blue Whale</h3>
+            <div class="species-latin">Balaenoptera musculus</div>
+            <p class="species-fact">The largest animal to ever live on Earth �?" up to 100 feet long. Their hearts are the size of a small car.</p>
+          </div>
+        </div>
+
+        <div class="species-card reveal">
+          <div class="species-card-bg" style="background: linear-gradient(135deg, #7400b8, #1a0a2e)">�Y�'</div>
+          <div class="species-card-info">
+            <h3>Giant Squid</h3>
+            <div class="species-latin">Architeuthis dux</div>
+            <p class="species-fact">Eyes the size of dinner plates �?" the largest in the animal kingdom. Can reach 43 feet in total length.</p>
+          </div>
+        </div>
+
+        <div class="species-card reveal">
+          <div class="species-card-bg" style="background: linear-gradient(135deg, #001845, #023e8a)">�Y�^</div>
+          <div class="species-card-info">
+            <h3>Hammerhead Shark</h3>
+            <div class="species-latin">Sphyrna mokarran</div>
+            <p class="species-fact">Their unique head shape provides 360° vision and enhanced electroreception to detect prey hidden in sand.</p>
+          </div>
+        </div>
+
+        <div class="species-card reveal">
+          <div class="species-card-bg" style="background: linear-gradient(135deg, #f72585, #7400b8)">�Y��</div>
+          <div class="species-card-info">
+            <h3>Jellyfish</h3>
+            <div class="species-latin">Aurelia aurita</div>
+            <p class="species-fact">Some species are biologically immortal �?" they can reverse their aging process and revert to a juvenile state.</p>
+          </div>
+        </div>
+
+        <div class="species-card reveal">
+          <div class="species-card-bg" style="background: linear-gradient(135deg, #2ec4b6, #023e8a)">�Y��</div>
+          <div class="species-card-info">
+            <h3>Sea Turtle</h3>
+            <div class="species-latin">Chelonia mydas</div>
+            <p class="species-fact">Navigate thousands of miles using Earth's magnetic field. They've existed for over 100 million years.</p>
+          </div>
+        </div>
+
+        <div class="species-card reveal">
+          <div class="species-card-bg" style="background: linear-gradient(135deg, #0096c7, #001845); font-size: 6rem">�Y�^</div>
+          <div class="species-card-info">
+            <h3>Manta Ray</h3>
+            <div class="species-latin">Mobula birostris</div>
+            <p class="species-fact">The largest brains of any fish �?" they can recognize themselves in mirrors, suggesting self-awareness.</p>
+          </div>
+        </div>
+
+        <div class="species-card reveal">
+          <div class="species-card-bg" style="background: linear-gradient(135deg, #ff6b6b, #0a0a2e)">�Y�T</div>
+          <div class="species-card-info">
+            <h3>Octopus</h3>
+            <div class="species-latin">Octopus vulgaris</div>
+            <p class="species-fact">Three hearts, blue blood, and can change color in 0.3 seconds. Each arm has its own mini-brain.</p>
+          </div>
+        </div>
+
+        <div class="species-card reveal">
+          <div class="species-card-bg" style="background: linear-gradient(135deg, #050510, #1a0a2e)">�Y��</div>
+          <div class="species-card-info">
+            <h3>Anglerfish</h3>
+            <div class="species-latin">Lophiiformes</div>
+            <p class="species-fact">Uses a bioluminescent lure to attract prey in total darkness. Males fuse permanently to females for life.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 7. OCEAN WONDERS ===================== -->
+  <section class="wonders-section" id="wonders">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">Natural Wonders</div>
+        <h2 class="section-title reveal">Ocean <span class="text-gradient">Wonders</span></h2>
+        <p class="section-subtitle reveal" style="margin: 0 auto">
+          Beyond the creatures �?" discover the ocean's most breathtaking geological and natural formations.
+        </p>
+      </div>
+
+      <div class="wonders-grid stagger-children">
+        <div class="wonder-card reveal">
+          <div class="wonder-card-bg" style="background: linear-gradient(135deg, #2ec4b6, #023e8a)">�YO�</div>
+          <div class="wonder-card-overlay"></div>
+          <div class="wonder-card-content">
+            <h3>Coral Forest</h3>
+            <p>Vast underwater gardens spanning miles, home to 25% of all marine species. Living structures built over thousands of years.</p>
+          </div>
+        </div>
+
+        <div class="wonder-card reveal">
+          <div class="wonder-card-bg" style="background: linear-gradient(135deg, #ff6b6b, #1a0a2e)">�YO<</div>
+          <div class="wonder-card-overlay"></div>
+          <div class="wonder-card-content">
+            <h3>Hydrothermal Vents</h3>
+            <p>Superheated water at 700°F erupts from the seafloor, supporting unique ecosystems that thrive without sunlight.</p>
+          </div>
+        </div>
+
+        <div class="wonder-card reveal">
+          <div class="wonder-card-bg" style="background: linear-gradient(135deg, #4a4e69, #1a0a2e)">�Ys�</div>
+          <div class="wonder-card-overlay"></div>
+          <div class="wonder-card-content">
+            <h3>Ancient Shipwrecks</h3>
+            <p>Time capsules of human history preserved on the ocean floor �?" from ancient galleons to modern vessels.</p>
+          </div>
+        </div>
+
+        <div class="wonder-card reveal">
+          <div class="wonder-card-bg" style="background: linear-gradient(135deg, #001845, #050510)">�Y.�️</div>
+          <div class="wonder-card-overlay"></div>
+          <div class="wonder-card-content">
+            <h3>Deep Sea Caves</h3>
+            <p>Submerged cavern systems with crystal-clear water, stalactites, and passages that lead to hidden underground chambers.</p>
+          </div>
+        </div>
+
+        <div class="wonder-card reveal">
+          <div class="wonder-card-bg" style="background: linear-gradient(135deg, #0a0a2e, #f72585)">�Y'�</div>
+          <div class="wonder-card-overlay"></div>
+          <div class="wonder-card-content">
+            <h3>Black Smokers</h3>
+            <p>Chimney-like structures ejecting dark mineral-rich fluid. The hottest hydrothermal vents on Earth.</p>
+          </div>
+        </div>
+
+        <div class="wonder-card reveal">
+          <div class="wonder-card-bg" style="background: linear-gradient(135deg, #00f5d4, #7400b8)">�Y'Z</div>
+          <div class="wonder-card-overlay"></div>
+          <div class="wonder-card-content">
+            <h3>Crystal Caves</h3>
+            <p>Underwater grottos lined with natural mineral crystals that reflect light in prismatic rainbows of color.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 8. WHY CHOOSE ABYSS ===================== -->
+  <section class="why-section" id="why">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">Why ABYSS</div>
+        <h2 class="section-title reveal">Why Choose <span class="text-gradient">Us</span></h2>
+        <p class="section-subtitle reveal" style="margin: 0 auto">
+          Six pillars of excellence that make ABYSS the world's premier deep-sea expedition company.
+        </p>
+      </div>
+
+      <div class="why-grid stagger-children">
+        <div class="why-card reveal">
+          <div class="why-card-icon">�Y>�️</div>
+          <h3>100% Safety</h3>
+          <p>Military-grade submarines with triple-redundant systems. Zero incidents in our history.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-card-icon">�Y'��?��o^️</div>
+          <h3>Expert Crew</h3>
+          <p>Former navy submarine commanders and marine biologists with decades of deep-sea experience.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-card-icon">�o�</div>
+          <h3>Luxury Experience</h3>
+          <p>Five-star hospitality underwater �?" gourmet dining, premium suites, and panoramic observation.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-card-icon">�Y��</div>
+          <h3>Professional Divers</h3>
+          <p>PADI-certified dive masters available for shallow-water excursions at select destinations.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-card-icon">�Y"�</div>
+          <h3>Latest Technology</h3>
+          <p>AI navigation, 8K cameras, sonar mapping, and real-time species identification systems.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-card-icon">�Y'�</div>
+          <h3>Small Group Tours</h3>
+          <p>Maximum 12 guests per expedition for an intimate, exclusive, and personalized experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 9. JOURNEY TIMELINE ===================== -->
+  <section class="journey-section" id="journey">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">Your Journey</div>
+        <h2 class="section-title reveal">The ABYSS <span class="text-gradient">Experience</span></h2>
+        <p class="section-subtitle reveal" style="margin: 0 auto">
+          From booking to certification �?" every step of your deep-sea adventure is carefully orchestrated.
+        </p>
+      </div>
+
+      <div class="journey-timeline-wrapper reveal">
+        <div class="journey-timeline">
+          <div class="journey-step">
+            <div class="journey-step-dot">�Y"<</div>
+            <div class="journey-step-number">Step 01</div>
+            <h3>Choose Tour</h3>
+            <p>Select your expedition destination and preferred dates</p>
+          </div>
+          <div class="journey-arrow">�?'</div>
+
+          <div class="journey-step">
+            <div class="journey-step-dot">�YZ"</div>
+            <div class="journey-step-number">Step 02</div>
+            <h3>Training</h3>
+            <p>Complete our comprehensive safety and orientation program</p>
+          </div>
+          <div class="journey-arrow">�?'</div>
+
+          <div class="journey-step">
+            <div class="journey-step-dot">�Ys�</div>
+            <div class="journey-step-number">Step 03</div>
+            <h3>Board</h3>
+            <p>Board the mothership and settle into your luxury cabin</p>
+          </div>
+          <div class="journey-arrow">�?'</div>
+
+          <div class="journey-step">
+            <div class="journey-step-dot">�?️</div>
+            <div class="journey-step-number">Step 04</div>
+            <h3>Dive</h3>
+            <p>Descend into the deep aboard your state-of-the-art submarine</p>
+          </div>
+          <div class="journey-arrow">�?'</div>
+
+          <div class="journey-step">
+            <div class="journey-step-dot">�Y"�</div>
+            <div class="journey-step-number">Step 05</div>
+            <h3>Explore</h3>
+            <p>Witness breathtaking marine life and underwater formations</p>
+          </div>
+          <div class="journey-arrow">�?'</div>
+
+          <div class="journey-step">
+            <div class="journey-step-dot">�?️</div>
+            <div class="journey-step-number">Step 06</div>
+            <h3>Return</h3>
+            <p>Safely ascend and celebrate with your fellow explorers</p>
+          </div>
+          <div class="journey-arrow">�?'</div>
+
+          <div class="journey-step">
+            <div class="journey-step-dot">�Y�?</div>
+            <div class="journey-step-number">Step 07</div>
+            <h3>Certificate</h3>
+            <p>Receive your official ABYSS Deep-Sea Explorer certification</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 10. STATISTICS ===================== -->
+  <section class="stats-section" id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-number"><span class="counter" data-target="250">0</span><span class="stat-suffix">+</span></div>
+          <div class="stat-label">Expeditions</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-number"><span class="counter" data-target="98">0</span><span class="stat-suffix">%</span></div>
+          <div class="stat-label">Safety Record</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-number"><span class="counter" data-target="18">0</span></div>
+          <div class="stat-label">Countries</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-number"><span class="counter" data-target="15000">0</span><span class="stat-suffix">+</span></div>
+          <div class="stat-label">Visitors</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-number"><span class="counter" data-target="500">0</span><span class="stat-suffix">+</span></div>
+          <div class="stat-label">Marine Species</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 11. TESTIMONIALS ===================== -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">Testimonials</div>
+        <h2 class="section-title reveal">What Explorers <span class="text-gradient">Say</span></h2>
+        <p class="section-subtitle reveal" style="margin: 0 auto">
+          Real stories from our guests who dared to descend into the unknown.
+        </p>
+      </div>
+
+      <div class="testimonials-slider">
+        <div class="swiper testimonials-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <span class="star">�~.</span><span class="star">�~.</span><span class="star">�~.</span><span class="star">�~.</span><span class="star">�~.</span>
+                </div>
+                <p class="testimonial-text">Seeing the Titanic wreck with my own eyes was the most profound experience of my life. The submarine was incredibly luxurious �?" better than any five-star hotel. ABYSS exceeded every expectation.</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar">JC</div>
+                  <div class="testimonial-author-info">
+                    <h4>James Chen</h4>
+                    <p>Tech Entrepreneur, San Francisco</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <span class="star">�~.</span><span class="star">�~.</span><span class="star">�~.</span><span class="star">�~.</span><span class="star">�~.</span>
+                </div>
+                <p class="testimonial-text">The Mariana Trench expedition was life-changing. Watching bioluminescent creatures dance outside the observation dome at 4,000 meters �?" no photo or video can capture that magic.</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar">SA</div>
+                  <div class="testimonial-author-info">
+                    <h4>Sofia Andersson</h4>
+                    <p>Marine Biologist, Stockholm</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <span class="star">�~.</span><span class="star">�~.</span><span class="star">�~.</span><span class="star">�~.</span><span class="star">�~.</span>
+                </div>
+                <p class="testimonial-text">I've climbed Everest and been to space, but nothing compares to the deep ocean. The crew was phenomenal, the food was michelin-star quality, and the views were otherworldly.</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar">RK</div>
+                  <div class="testimonial-author-info">
+                    <h4>Raj Kapoor</h4>
+                    <p>Adventure Philanthropist, Dubai</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <span class="star">�~.</span><span class="star">�~.</span><span class="star">�~.</span><span class="star">�~.</span><span class="star">�~.</span>
+                </div>
+                <p class="testimonial-text">Brought my kids on the Coral Kingdom expedition. They couldn't stop talking about it for months. ABYSS made the deep ocean accessible and safe for our entire family.</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar">EM</div>
+                  <div class="testimonial-author-info">
+                    <h4>Elena Martinez</h4>
+                    <p>Filmmaker, Barcelona</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 12. EXPEDITION GALLERY ===================== -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">Gallery</div>
+        <h2 class="section-title reveal">Expedition <span class="text-gradient">Moments</span></h2>
+        <p class="section-subtitle reveal" style="margin: 0 auto">
+          Captured moments from our deep-sea adventures around the world.
+        </p>
+      </div>
+
+      <div class="gallery-masonry stagger-children">
+        <div class="gallery-item reveal" style="--aspect: 4/5">
+          <div class="gallery-item-bg" style="background: linear-gradient(135deg, #023e8a, #001233)">�Y�<</div>
+          <div class="gallery-item-overlay">
+            <h4>Blue Whale Encounter</h4>
+            <button class="explore-btn" data-magnetic>Explore</button>
+          </div>
+        </div>
+        <div class="gallery-item reveal" style="--aspect: 3/4">
+          <div class="gallery-item-bg" style="background: linear-gradient(135deg, #7400b8, #0a0a2e)">�Y�'</div>
+          <div class="gallery-item-overlay">
+            <h4>Deep Sea Discovery</h4>
+            <button class="explore-btn" data-magnetic>Explore</button>
+          </div>
+        </div>
+        <div class="gallery-item reveal" style="--aspect: 1/1">
+          <div class="gallery-item-bg" style="background: linear-gradient(135deg, #2ec4b6, #001845)">�YOS</div>
+          <div class="gallery-item-overlay">
+            <h4>Ocean Current</h4>
+            <button class="explore-btn" data-magnetic>Explore</button>
+          </div>
+        </div>
+        <div class="gallery-item reveal" style="--aspect: 3/2">
+          <div class="gallery-item-bg" style="background: linear-gradient(135deg, #f72585, #1a0a2e)">�Y��</div>
+          <div class="gallery-item-overlay">
+            <h4>Jellyfish Bloom</h4>
+            <button class="explore-btn" data-magnetic>Explore</button>
+          </div>
+        </div>
+        <div class="gallery-item reveal" style="--aspect: 4/5">
+          <div class="gallery-item-bg" style="background: linear-gradient(135deg, #ff6b6b, #023e8a)">�YO<</div>
+          <div class="gallery-item-overlay">
+            <h4>Volcanic Vent</h4>
+            <button class="explore-btn" data-magnetic>Explore</button>
+          </div>
+        </div>
+        <div class="gallery-item reveal" style="--aspect: 1/1">
+          <div class="gallery-item-bg" style="background: linear-gradient(135deg, #48cae4, #001233)">�Y��</div>
+          <div class="gallery-item-overlay">
+            <h4>Reef Paradise</h4>
+            <button class="explore-btn" data-magnetic>Explore</button>
+          </div>
+        </div>
+        <div class="gallery-item reveal" style="--aspect: 3/4">
+          <div class="gallery-item-bg" style="background: linear-gradient(135deg, #00f5d4, #0a0a2e)">�Ys�</div>
+          <div class="gallery-item-overlay">
+            <h4>Shipwreck Exploration</h4>
+            <button class="explore-btn" data-magnetic>Explore</button>
+          </div>
+        </div>
+        <div class="gallery-item reveal" style="--aspect: 4/3">
+          <div class="gallery-item-bg" style="background: linear-gradient(135deg, #f9c74f, #023e8a)">�Y��</div>
+          <div class="gallery-item-overlay">
+            <h4>Turtle Migration</h4>
+            <button class="explore-btn" data-magnetic>Explore</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 13. FAQ ===================== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">FAQ</div>
+        <h2 class="section-title reveal">Frequently <span class="text-gradient">Asked</span></h2>
+        <p class="section-subtitle reveal" style="margin: 0 auto">
+          Everything you need to know before your deep-sea adventure.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-question" id="faq-q1">
+            Is it safe to dive to extreme depths?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Absolutely. Our submarines are built with military-grade titanium hulls, triple-redundant emergency systems, and are rated for depths up to 11,000 meters. Every expedition is overseen by former navy submarine commanders. We maintain a 100% safety record across all 250+ expeditions.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" id="faq-q2">
+            Can beginners join the expeditions?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes! We offer expeditions for all experience levels. Our Coral Kingdom and Blue Hole tours are perfect for beginners, with depths under 200 meters. Every guest completes a comprehensive safety briefing and orientation before diving. No prior diving experience is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" id="faq-q3">
+            How deep do the submarines go?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Our fleet ranges from 200m (Coral Kingdom tours) to nearly 11,000m (Mariana Trench expedition). The Abyssal Phantom, our ultra-deep class submarine, is rated for the deepest points on Earth. Most expeditions operate between 1,000m and 4,000m depth.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" id="faq-q4">
+            What is the minimum age requirement?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              The minimum age is 10 years for our beginner expeditions (Coral Kingdom, Blue Hole) and 16 years for moderate to advanced expeditions. All guests under 18 must be accompanied by a parent or guardian. A medical clearance is required for all participants.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" id="faq-q5">
+            Is food included in the expedition?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes! All expeditions include gourmet dining prepared by our onboard Michelin-trained chefs. We cater to all dietary requirements and offer a curated selection of wines and beverages. Multi-day expeditions feature themed dinner experiences including an underwater dining event.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" id="faq-q6">
+            Is photography allowed during the dive?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Absolutely! We encourage you to capture your experience. Our submarines feature multiple 4K and 8K external camera systems that you can control from your seat. Personal cameras and phones are welcome inside the cabin. We also provide a professional photo and video package of your expedition at no extra cost.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 14. BOOK YOUR ADVENTURE ===================== -->
+  <section class="cta-section" id="book">
+    <div class="cta-bg"></div>
+    <div class="cta-glow"></div>
+    <div class="cta-content">
+      <div class="section-label reveal" style="justify-content: center">Ready To Dive?</div>
+      <h2 class="reveal">Book Your <span class="text-gradient">Expedition</span> Today</h2>
+      <p class="reveal">Join the select few who have ventured to the ocean's deepest realms. Your extraordinary underwater journey awaits.</p>
+      <a href="#" class="btn btn-primary btn-lg reveal" data-magnetic>
+        �YOS Reserve Your Spot Now
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== 15. FOOTER ===================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <div class="nav-logo-icon">�YOS</div>
+            <span class="nav-logo-text">ABYSS</span>
+          </a>
+          <p>The world's premier luxury deep-sea expedition company. Discover the ocean's greatest mysteries in unmatched comfort and safety.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Twitter" data-magnetic>�.�</a>
+            <a href="#" aria-label="Instagram" data-magnetic>�Y"�</a>
+            <a href="#" aria-label="YouTube" data-magnetic>�-�</a>
+            <a href="#" aria-label="LinkedIn" data-magnetic>in</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#dive">Dive Experience</a></li>
+            <li><a href="#expeditions">Expeditions</a></li>
+            <li><a href="#fleet">Our Fleet</a></li>
+            <li><a href="#species">Marine Life</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#why">Why ABYSS</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Subscribe for expedition updates, marine discoveries, and exclusive offers.</p>
+          <form class="newsletter-form" onsubmit="return false">
+            <input type="email" placeholder="Enter your email" aria-label="Email">
+            <button type="submit" data-magnetic>Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 ABYSS Deep-Sea Expeditions. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- App Scripts -->
+  <script src="js/cursor.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/sections.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

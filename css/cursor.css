@@ -1,0 +1,178 @@
+﻿/* ============================================================
+   ABYSS â€” Custom Cursor & Bubble Trail
+   ============================================================ */
+
+/* Hide default cursor on all interactive elements */
+*, *::before, *::after {
+  cursor: none !important;
+}
+
+/* ---------- Main Cursor Dot ---------- */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--glow-cyan);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease-expo),
+              height 0.3s var(--ease-expo),
+              background 0.3s var(--ease-smooth);
+  box-shadow: 0 0 10px var(--glow-cyan),
+              0 0 20px var(--glow-cyan),
+              0 0 40px rgba(0,245,212,0.3);
+  mix-blend-mode: screen;
+}
+
+/* ---------- Cursor Outer Ring ---------- */
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgba(0, 245, 212, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s var(--ease-expo),
+              height 0.4s var(--ease-expo),
+              border-color 0.3s var(--ease-smooth),
+              background 0.3s var(--ease-smooth);
+}
+
+/* ---------- Hover States ---------- */
+.cursor-dot.hovering {
+  width: 12px;
+  height: 12px;
+  background: var(--white);
+  box-shadow: 0 0 15px var(--white),
+              0 0 30px var(--glow-cyan),
+              0 0 60px rgba(0,245,212,0.3);
+}
+
+.cursor-ring.hovering {
+  width: 60px;
+  height: 60px;
+  border-color: rgba(0, 245, 212, 0.6);
+  background: rgba(0, 245, 212, 0.05);
+}
+
+/* ---------- Click State ---------- */
+.cursor-dot.clicking {
+  width: 6px;
+  height: 6px;
+  background: var(--glow-magenta);
+  box-shadow: 0 0 20px var(--glow-magenta);
+}
+
+.cursor-ring.clicking {
+  width: 30px;
+  height: 30px;
+  border-color: var(--glow-magenta);
+}
+
+/* ---------- Magnetic Pull State ---------- */
+.cursor-dot.magnetic {
+  width: 16px;
+  height: 16px;
+  background: var(--glow-cyan);
+  box-shadow: 0 0 20px var(--glow-cyan),
+              0 0 40px var(--glow-cyan),
+              0 0 80px rgba(0,245,212,0.4);
+}
+
+.cursor-ring.magnetic {
+  width: 80px;
+  height: 80px;
+  border-color: rgba(0, 245, 212, 0.3);
+  background: rgba(0, 245, 212, 0.03);
+}
+
+/* ---------- Bubble Trail Particles ---------- */
+.cursor-bubble {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: calc(var(--z-cursor) - 1);
+  background: radial-gradient(circle, rgba(0,245,212,0.6) 0%, rgba(0,245,212,0) 70%);
+  animation: bubbleFloat 1.5s ease-out forwards;
+  mix-blend-mode: screen;
+}
+
+@keyframes bubbleFloat {
+  0% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% - 40px)) scale(0.3);
+  }
+}
+
+/* ---------- Cursor Text (for special hover areas) ---------- */
+.cursor-text {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--glow-cyan);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease-smooth);
+  white-space: nowrap;
+}
+
+.cursor-text.visible {
+  opacity: 1;
+}
+
+/* ---------- Section-Aware Colors ---------- */
+.cursor-dot.section-deep {
+  background: var(--glow-purple);
+  box-shadow: 0 0 10px var(--glow-purple),
+              0 0 20px var(--glow-purple);
+}
+
+.cursor-ring.section-deep {
+  border-color: rgba(116, 0, 184, 0.4);
+}
+
+.cursor-dot.section-warm {
+  background: var(--glow-coral);
+  box-shadow: 0 0 10px var(--glow-coral),
+              0 0 20px var(--glow-coral);
+}
+
+.cursor-ring.section-warm {
+  border-color: rgba(255, 107, 107, 0.4);
+}
+
+/* ---------- Hide cursor on touch devices ---------- */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring,
+  .cursor-bubble,
+  .cursor-text {
+    display: none !important;
+  }
+
+  *, *::before, *::after {
+    cursor: auto !important;
+  }
+}

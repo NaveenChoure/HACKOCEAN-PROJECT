@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Fleet | ABYSS Expeditions</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/cursor.css">
+  <link rel="stylesheet" href="css/liquid-glass.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo" data-magnetic>
+        <svg class="nav-logo-svg" viewBox="0 0 32 32" width="28" height="28"><path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 3c1.5 4 6 6 10 7-1 4-4 8-10 10-6-2-9-6-10-10 4-1 8.5-3 10-7z" fill="url(#logoGrad)"/><defs><linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00f5ff"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs></svg>
+        <span class="nav-logo-text">ABYSS</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="expeditions.html">Expeditions</a></li>
+        <li><a href="fleet.html">Fleet</a></li>
+        <li><a href="species.html">Marine Life</a></li>
+        <li><a href="contact.html" class="nav-cta" data-magnetic>Book Now</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(3, 7, 18, 1)), url('assets/images/submarine.png');">
+    <div class="container page-hero-content reveal">
+      <span class="page-hero-badge">OUR VESSELS</span>
+      <h1 class="page-hero-title">THE FLEET</h1>
+      <p class="page-hero-subtitle">Submersible Vessels Engineered for the Abyss</p>
+    </div>
+  </header>
+
+  <section class="fleet-showcase section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">State of the Art</span>
+        <h2 class="section-title">ENGINEERED FOR <span class="text-gradient">EXTREMES</span></h2>
+      </div>
+
+      <div class="fleet-grid stagger-children">
+        <!-- Vessel 1 -->
+        <div class="fleet-card liquid-glass tilt-card">
+          <div class="fleet-image" style="background-image: url('assets/images/submarine.png'); height: 300px; background-size: cover; background-position: center;"></div>
+          <div class="fleet-info p-8">
+            <h3 class="font-playfair text-3xl mb-2">Ocean Explorer</h3>
+            <p class="text-gray-400 mb-6">Our flagship vessel designed for extended research and luxury observation.</p>
+            <ul class="fleet-specs grid grid-cols-2 gap-4">
+              <li class="flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <span>6 Passengers</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></svg>
+                <span>4,000m Depth</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                <span>360° Acrylic Dome</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                <span>Dual AI Systems</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Vessel 2 -->
+        <div class="fleet-card liquid-glass tilt-card">
+          <div class="fleet-image" style="background-image: url('assets/images/submarine.png'); height: 300px; background-size: cover; background-position: center; filter: hue-rotate(90deg);"></div>
+          <div class="fleet-info p-8">
+            <h3 class="font-playfair text-3xl mb-2">Deep Voyager</h3>
+            <p class="text-gray-400 mb-6">Built for maximum depth penetration with enhanced structural integrity.</p>
+            <ul class="fleet-specs grid grid-cols-2 gap-4">
+              <li class="flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <span>3 Passengers</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></svg>
+                <span>11,000m Depth</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                <span>Titanium Viewports</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                <span>Robotic Arms</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tech-section section-padding" style="background-color: #050a15;">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Innovation</span>
+        <h2 class="section-title">DEEP-SEA <span class="text-gradient">TECHNOLOGY</span></h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
+        <div class="tech-card p-6 liquid-glass rounded-xl">
+          <svg class="mb-4 text-cyan-400" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+          <h4 class="font-space font-semibold text-xl mb-2">AI Navigation</h4>
+          <p class="text-sm text-gray-400">Autonomous terrain mapping and obstacle avoidance using neural networks.</p>
+        </div>
+        <div class="tech-card p-6 liquid-glass rounded-xl">
+          <svg class="mb-4 text-purple-500" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          <h4 class="font-space font-semibold text-xl mb-2">Titanium Hull</h4>
+          <p class="text-sm text-gray-400">Grade-V titanium pressure sphere tested to withstand 1,200 atmospheres.</p>
+        </div>
+        <div class="tech-card p-6 liquid-glass rounded-xl">
+          <svg class="mb-4 text-cyan-400" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2.5" ry="2.5"/><path d="M8 12a4 4 0 1 0 8 0 4 4 0 1 0-8 0"/></svg>
+          <h4 class="font-space font-semibold text-xl mb-2">8K Cameras</h4>
+          <p class="text-sm text-gray-400">Ultra-low light cinematic arrays capturing the unseen with perfect clarity.</p>
+        </div>
+        <div class="tech-card p-6 liquid-glass rounded-xl">
+          <svg class="mb-4 text-purple-500" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg>
+          <h4 class="font-space font-semibold text-xl mb-2">Life Support</h4>
+          <p class="text-sm text-gray-400">Quad-redundant closed-loop scrubbers ensuring 96 hours of breathable air.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline-section section-padding">
+    <div class="container">
+      <div class="section-header reveal text-center mx-auto max-w-2xl">
+        <h2 class="section-title">THE DESCENT <span class="text-gradient">JOURNEY</span></h2>
+      </div>
+
+      <div class="timeline-container relative border-l-2 border-gray-800 ml-4 md:ml-12 pl-8 py-8 space-y-12">
+        <div class="timeline-item relative reveal-left">
+          <div class="absolute -left-10 md:-left-18 top-0 bg-cyan-500 rounded-full p-2 text-black">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <span class="text-sm text-cyan-400 font-space mb-1 block">STEP 01</span>
+          <h4 class="text-2xl font-playfair mb-2">Pre-Dive Briefing</h4>
+          <p class="text-gray-400">Comprehensive safety checks and mission overview aboard the surface vessel.</p>
+        </div>
+        <div class="timeline-item relative reveal-left">
+          <div class="absolute -left-10 md:-left-18 top-0 bg-purple-500 rounded-full p-2 text-white">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <span class="text-sm text-purple-400 font-space mb-1 block">STEP 02</span>
+          <h4 class="text-2xl font-playfair mb-2">Launch & Splashdown</h4>
+          <p class="text-gray-400">Crane deployment into the water. Final telemetry checks with surface control.</p>
+        </div>
+        <div class="timeline-item relative reveal-left">
+          <div class="absolute -left-10 md:-left-18 top-0 bg-cyan-500 rounded-full p-2 text-black">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <span class="text-sm text-cyan-400 font-space mb-1 block">STEP 03</span>
+          <h4 class="text-2xl font-playfair mb-2">Entering the Twilight Zone</h4>
+          <p class="text-gray-400">Passing 200m depth, light fades rapidly. Bioluminescence begins to appear.</p>
+        </div>
+        <div class="timeline-item relative reveal-left">
+          <div class="absolute -left-10 md:-left-18 top-0 bg-purple-500 rounded-full p-2 text-white">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/></svg>
+          </div>
+          <span class="text-sm text-purple-400 font-space mb-1 block">STEP 04</span>
+          <h4 class="text-2xl font-playfair mb-2">The Midnight Zone</h4>
+          <p class="text-gray-400">At 1000m, absolute darkness prevails. Exterior floodlights are engaged.</p>
+        </div>
+        <div class="timeline-item relative reveal-left">
+          <div class="absolute -left-10 md:-left-18 top-0 bg-cyan-500 rounded-full p-2 text-black">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <span class="text-sm text-cyan-400 font-space mb-1 block">STEP 05</span>
+          <h4 class="text-2xl font-playfair mb-2">Abyssal Target Reached</h4>
+          <p class="text-gray-400">Arrival at the seafloor. Hovering maneuvers and robotic sample collection commence.</p>
+        </div>
+        <div class="timeline-item relative reveal-left">
+          <div class="absolute -left-10 md:-left-18 top-0 bg-purple-500 rounded-full p-2 text-white">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+          </div>
+          <span class="text-sm text-purple-400 font-space mb-1 block">STEP 06</span>
+          <h4 class="text-2xl font-playfair mb-2">Ascent Protocol</h4>
+          <p class="text-gray-400">Releasing descent weights. Buoyancy-driven climb back to the surface begins.</p>
+        </div>
+        <div class="timeline-item relative reveal-left">
+          <div class="absolute -left-10 md:-left-18 top-0 bg-cyan-500 rounded-full p-2 text-black">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <span class="text-sm text-cyan-400 font-space mb-1 block">STEP 07</span>
+          <h4 class="text-2xl font-playfair mb-2">Recovery</h4>
+          <p class="text-gray-400">Breaching the surface. Recovery by the support ship and debriefing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section section-padding text-center">
+    <div class="container reveal-scale">
+      <h2 class="font-playfair text-4xl md:text-6xl mb-6">Ready to board?</h2>
+      <a href="contact.html" class="btn btn-primary btn-lg" data-magnetic>Reserve Your Seat</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" data-magnetic>
+            <svg class="nav-logo-svg" viewBox="0 0 32 32" width="28" height="28"><path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 3c1.5 4 6 6 10 7-1 4-4 8-10 10-6-2-9-6-10-10 4-1 8.5-3 10-7z" fill="url(#logoGrad)"/></svg>
+            <span class="nav-logo-text">ABYSS</span>
+          </a>
+          <p class="mt-4 text-gray-400">Pioneering luxury deep-sea exploration.</p>
+        </div>
+        <div class="footer-links">
+          <h4 class="font-space mb-4">Explore</h4>
+          <ul>
+            <li><a href="expeditions.html">Expeditions</a></li>
+            <li><a href="fleet.html">The Fleet</a></li>
+            <li><a href="species.html">Marine Life</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4 class="font-space mb-4">Company</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom mt-12 pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
+        &copy; 2026 ABYSS Expeditions. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+  <script src="js/cursor.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/sections.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

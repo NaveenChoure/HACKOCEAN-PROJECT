@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book an ABYSS deep-sea submersible expedition. Reserve your voyage to Mariana Trench, Titanic wreck, or custom charter.">
+  <meta name="theme-color" content="#020810">
+  <title>Reserve Your Voyage — ABYSS Contact & Booking</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/cursor.css">
+  <link rel="stylesheet" href="css/liquid-glass.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Preloader & Cursor -->
+  <div class="preloader" id="preloader"><div class="preloader-logo">ABYSS</div><div class="preloader-bar"></div></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo" data-magnetic>
+        <svg class="nav-logo-svg" viewBox="0 0 32 32" width="28" height="28">
+          <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 3c1.5 4 6 6 10 7-1 4-4 8-10 10-6-2-9-6-10-10 4-1 8.5-3 10-7z" fill="url(#navLogoGrad)"/>
+          <defs><linearGradient id="navLogoGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00f5ff"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs>
+        </svg>
+        <span class="nav-logo-text">ABYSS</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="expeditions.html">Expeditions</a></li>
+        <li><a href="fleet.html">Fleet</a></li>
+        <li><a href="species.html">Marine Life</a></li>
+        <li>
+          <button class="nav-audio-btn" id="audioToggle" data-magnetic aria-label="Toggle Audio">
+            <span class="audio-visualizer"><span class="audio-bar"></span><span class="audio-bar"></span><span class="audio-bar"></span><span class="audio-bar"></span></span>
+            <span>Audio</span>
+          </button>
+        </li>
+        <li><a href="contact.html" class="nav-cta active" data-magnetic>Book Now</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg"><img src="assets/images/hero-ocean.png" alt="Abyss background"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="page-hero-badge">Expedition Concierge</div>
+        <h1 class="page-hero-title">Reserve Your <span class="text-gradient">Descent</span></h1>
+        <p class="page-hero-subtitle">
+          Submit your voyage inquiry below. Our expedition commanders will contact you within 24 hours to review dive logistics and medical clearance.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM & CONTACT INFO SECTION -->
+  <section class="booking-form-section">
+    <div class="container">
+      <div class="booking-form-grid">
+        <!-- Booking Form -->
+        <div class="booking-form">
+          <h3 style="font-size: var(--fs-h3); margin-bottom: 24px;">Expedition Inquiry Form</h3>
+          <form id="expeditionForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="e.g. Eleanor Vance" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="eleanor@abyss.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="expeditionSelect">Select Expedition</label>
+                <select id="expeditionSelect" required>
+                  <option value="" disabled selected>Choose a destination...</option>
+                  <option value="mariana">Mariana Trench (10,994m)</option>
+                  <option value="titanic">Titanic Wreck (3,800m)</option>
+                  <option value="bluehole">Great Blue Hole (124m)</option>
+                  <option value="volcano">Hydrothermal Vents (2,500m)</option>
+                  <option value="coral">Coral Kingdom Sanctuary (60m)</option>
+                  <option value="arctic">Arctic Ocean Under Ice (1,200m)</option>
+                  <option value="custom">Private Full Vessel Charter</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="passengerCount">Passengercount</label>
+                <select id="passengerCount" required>
+                  <option value="1">1 Explorer (Shared Cabin)</option>
+                  <option value="2">2 Explorers (Couples Suite)</option>
+                  <option value="4">4 Explorers (Group Pod)</option>
+                  <option value="charter">Full Charter (up to 12)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="preferredDate">Target Voyage Date</label>
+              <input type="date" id="preferredDate" required>
+            </div>
+
+            <div class="form-group">
+              <label for="specialRequests">Special Requests / Medical Notes</label>
+              <textarea id="specialRequests" placeholder="Specify any dietary preferences, diving certifications, or private custom requests..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg form-submit-btn" data-magnetic>
+              Submit Expedition Inquiry
+              <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info Cards -->
+        <div class="contact-info-stack">
+          <div class="contact-info-card">
+            <div class="icon-circle icon-cyan">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div>
+              <h4>Oceanic Headquarters</h4>
+              <p>ABYSS Ocean Operations Suite 14<br>Monaco Yacht Harbor & Deep Docks</p>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="icon-circle icon-purple">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div>
+              <h4>24/7 Voyage Dispatch</h4>
+              <p>+377 (98) 90-8800<br>Direct Satellite Relay to Mothership</p>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="icon-circle icon-magenta">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div>
+              <h4>Expedition Concierge</h4>
+              <p>voyages@abyss-expeditions.com<br>Response time: &lt; 2 hours</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Questions & Answers</div>
+        <h2 class="section-title">Frequently <span class="text-gradient">Asked</span></h2>
+        <p class="section-subtitle mx-auto">Essential voyage information for prospective deep sea explorers.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            What physical health or dive certifications are required?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              No scuba or prior diving certification is required. Because our submersibles maintain a 1-atmosphere internal pressure, you experience zero physical decompression. All guests complete a basic medical evaluation prior to boarding.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How safe are your HADAL titanium submersibles?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Our vessels feature solid titanium pressure hulls tested to 1.5x maximum depth pressure. Every vessel carries quad-redundant life support, acoustic communication drop-weights, and automatic ballast release mechanisms. We hold a 100% safety record across 250+ deep ocean dives.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What is included in the expedition fee?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              All bookings include full luxury accommodations on the mother vessel, gourmet meals by onboard Michelin-rated chefs, submarine dive seats, 8K video footage of your dive, and official ABYSS Explorer certification.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="nav-logo"><span class="nav-logo-text">ABYSS</span></a><p>World leader in luxury submersible expeditions.</p></div>
+        <div class="footer-col"><h4>Navigation</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="expeditions.html">Expeditions</a></li><li><a href="fleet.html">Fleet</a></li><li><a href="species.html">Marine Life</a></li><li><a href="contact.html">Book Now</a></li></ul></div>
+        <div class="footer-col"><h4>Support</h4><ul class="footer-links"><li><a href="#">Medical Guidelines</a></li><li><a href="#">Charter Policy</a></li><li><a href="#">Insurance</a></li></ul></div>
+        <div class="footer-col footer-newsletter"><h4>Stay Connected</h4><p>Receive expedition charter updates.</p><form class="newsletter-form" onsubmit="return false"><input type="email" placeholder="Email" required aria-label="Email"><button type="submit">Join</button></form></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 ABYSS Deep-Sea Expeditions Inc.</p></div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/sections.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
