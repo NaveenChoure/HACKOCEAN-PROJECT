@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    ABYSS â€” Section-Specific Interactions
    ============================================================ */
 
@@ -15,9 +15,11 @@ class AbyssSections {
     this.setupSmoothScroll();
   }
 
-  /* ---------- FAQ Accordion ---------- */
+  /* ---------- FAQ Accordion & Category / Search Filter ---------- */
   setupFAQ() {
     const faqItems = document.querySelectorAll('.faq-item');
+    const tabs = document.querySelectorAll('.faq-tab');
+    const searchInput = document.getElementById('faqSearch');
 
     faqItems.forEach(item => {
       const question = item.querySelector('.faq-question');
@@ -43,6 +45,46 @@ class AbyssSections {
         }
       });
     });
+
+    // Category Tabs Filter
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('active');
+          t.style.background = 'rgba(0,18,51,0.6)';
+          t.style.borderColor = 'rgba(255,255,255,0.1)';
+          t.style.color = 'var(--white-70)';
+        });
+        tab.classList.add('active');
+        tab.style.background = 'rgba(0,245,212,0.15)';
+        tab.style.borderColor = 'var(--glow-cyan)';
+        tab.style.color = '#ffffff';
+
+        const cat = tab.dataset.category;
+        faqItems.forEach(item => {
+          if (cat === 'all' || item.dataset.cat === cat) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Real-Time Search Filter
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        faqItems.forEach(item => {
+          const text = item.textContent.toLowerCase();
+          if (text.includes(query)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    }
   }
 
   /* ---------- Testimonials Swiper ---------- */

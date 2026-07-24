@@ -27,10 +27,10 @@ class AbyssAudioEngine {
         });
       }
 
-      // Pre-create ambient audio element fallback
-      this.bgAudio = new Audio('https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3');
+      // Pre-create ambient soothing audio element fallback
+      this.bgAudio = new Audio('https://cdn.pixabay.com/download/audio/2022/05/16/audio_c0e0b3bf1d.mp3');
       this.bgAudio.loop = true;
-      this.bgAudio.volume = 0.5;
+      this.bgAudio.volume = 0.55;
 
       // Unlock AudioContext on first user interaction anywhere
       const unlockAudio = () => {
